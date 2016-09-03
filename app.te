@@ -7,9 +7,6 @@
 ### zygote spawned apps should be added here.
 ###
 
-# WebView and other application-specific JIT compilers
-allow appdomain self:process execmem;
-
 # Receive and use open file descriptors inherited from zygote.
 allow appdomain zygote:fd use;
 

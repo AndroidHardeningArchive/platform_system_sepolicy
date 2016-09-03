@@ -12,6 +12,9 @@
 type isolated_app, domain, domain_deprecated;
 app_domain(isolated_app)
 
+# Application-specific JIT compilers
+allow isolated_app self:process execmem;
+
 # For art.
 allow isolated_app dalvikcache_data_file:file execute;
 
