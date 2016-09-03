@@ -25,6 +25,10 @@ app_domain(untrusted_app)
 net_domain(untrusted_app)
 bluetooth_domain(untrusted_app)
 
+# Legacy text relocations
+allow untrusted_app apk_data_file:file execmod;
+allow untrusted_app system_data_file:file execmod;
+
 # For art.
 allow untrusted_app dalvikcache_data_file:file execute;
 
