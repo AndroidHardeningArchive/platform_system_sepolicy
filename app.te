@@ -202,7 +202,7 @@ allow appdomain dalvikcache_data_file:lnk_file r_file_perms;
 
 # Allow apps to read/execute installed binaries
 allow appdomain apk_data_file:dir r_dir_perms;
-allow appdomain apk_data_file:file { rx_file_perms execmod };
+allow appdomain apk_data_file:file rx_file_perms;
 
 # /data/resource-cache
 allow appdomain resourcecache_data_file:file r_file_perms;
