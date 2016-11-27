@@ -101,3 +101,5 @@ ro.dalvik.              u:object_r:dalvik_prop:s0
 
 persist.libc.malloc.    u:object_r:system_prop:s0
 persist.privacy.        u:object_r:system_prop:s0
+
+sys.update.test         u:object_r:shell_prop:s0
