@@ -63,8 +63,8 @@ allow appdomain appdomain:fifo_file rw_file_perms;
 allow appdomain surfaceflinger:unix_stream_socket { read write setopt getattr getopt shutdown };
 
 # App sandbox file accesses.
-allow { appdomain -isolated_app } app_data_file:dir create_dir_perms;
-allow { appdomain -isolated_app } app_data_file:notdevfile_class_set create_file_perms;
+allow { appdomain -isolated_app -isolated_base_app } app_data_file:dir create_dir_perms;
+allow { appdomain -isolated_app -isolated_base_app } app_data_file:notdevfile_class_set create_file_perms;
 
 # lib subdirectory of /data/data dir is system-owned.
 allow appdomain system_data_file:dir r_dir_perms;
@@ -143,7 +143,7 @@ allow appdomain qtaguid_device:chr_file r_file_perms;
 
 # Grant GPU access to all processes started by Zygote.
 # They need that to render the standard UI.
-allow { appdomain -isolated_app } gpu_device:chr_file rw_file_perms;
+allow { appdomain -isolated_app -isolated_base_app } gpu_device:chr_file rw_file_perms;
 
 # Use the Binder.
 binder_use(appdomain)
@@ -212,9 +212,9 @@ control_logd(appdomain)
 # application inherit logd write socket (urge is to deprecate this long term)
 allow appdomain zygote:unix_dgram_socket write;
 
-allow { appdomain -isolated_app } keystore:keystore_key { get_state get insert delete exist list sign verify };
+allow { appdomain -isolated_app -isolated_base_app } keystore:keystore_key { get_state get insert delete exist list sign verify };
 
-use_keystore({ appdomain -isolated_app })
+use_keystore({ appdomain -isolated_app -isolated_base_app })
 
 allow appdomain console_device:chr_file { read write };
 
@@ -222,7 +222,7 @@ allow appdomain console_device:chr_file { read write };
 allowxperm { appdomain -bluetooth } self:{ rawip_socket tcp_socket udp_socket }
   ioctl { unpriv_sock_ioctls unpriv_tty_ioctls };
 
-allow { appdomain -isolated_app } ion_device:chr_file rw_file_perms;
+allow { appdomain -isolated_app -isolated_base_app } ion_device:chr_file rw_file_perms;
 
 # For app fuse.
 allow appdomain app_fuse_file:file { getattr read append write };
@@ -243,7 +243,7 @@ selinux_check_context(appdomain)
 
 # Apps receive an open tun fd from the framework for
 # device traffic. Do not allow untrusted app to directly open tun_device
-allow { appdomain -isolated_app } tun_device:chr_file { read write getattr ioctl append };
+allow { appdomain -isolated_app -isolated_base_app } tun_device:chr_file { read write getattr ioctl append };
 
 # Connect to adbd and use a socket transferred from it.
 # This is used for e.g. adb backup/restore.
@@ -279,7 +279,7 @@ neverallow appdomain {
 }:chr_file { read write };
 
 # Note: Try expanding list of app domains in the future.
-neverallow { untrusted_app untrusted_base_app isolated_app shell } graphics_device:chr_file { read write };
+neverallow { untrusted_app untrusted_base_app isolated_app isolated_base_app shell } graphics_device:chr_file { read write };
 
 neverallow { appdomain -nfc } nfc_device:chr_file
     { read write };
@@ -429,6 +429,7 @@ neverallow appdomain {
 neverallow {
   bluetooth
   isolated_app
+  isolated_base_app
   nfc
   radio
   system_app
