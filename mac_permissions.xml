@@ -51,4 +51,19 @@
       <seinfo value="platform" />
     </signer>
 
+    <!-- Media dev key in AOSP -->
+    <signer signature="@MEDIA" >
+      <seinfo value="base" />
+    </signer>
+
+    <!-- Shared dev key in AOSP -->
+    <signer signature="@SHARED" >
+      <seinfo value="base" />
+    </signer>
+
+    <!-- Release dev key in AOSP -->
+    <signer signature="@RELEASE" >
+      <seinfo value="base" />
+    </signer>
+
 </policy>
