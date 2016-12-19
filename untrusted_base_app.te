@@ -25,9 +25,6 @@ app_domain(untrusted_base_app)
 net_domain(untrusted_base_app)
 bluetooth_domain(untrusted_base_app)
 
-# For art.
-allow untrusted_base_app dalvikcache_data_file:file execute;
-
 # Some apps ship with shared libraries and binaries that they write out
 # to their sandbox directory and then execute.
 allow untrusted_base_app app_data_file:file rx_file_perms;
