@@ -15,9 +15,6 @@ app_domain(isolated_base_app)
 # Application-specific JIT compilers
 allow isolated_base_app self:process execmem;
 
-# For art.
-allow isolated_base_app dalvikcache_data_file:file execute;
-
 # Access already open app data files received over Binder or local socket IPC.
 allow isolated_base_app app_data_file:file { read write getattr lock };
 
