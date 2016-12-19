@@ -32,12 +32,6 @@ allow untrusted_base_app dalvikcache_data_file:file execute;
 # to their sandbox directory and then execute.
 allow untrusted_base_app app_data_file:file rx_file_perms;
 
-# ASEC
-allow untrusted_base_app asec_apk_file:file r_file_perms;
-allow untrusted_base_app asec_apk_file:dir r_dir_perms;
-# Execute libs in asec containers.
-allow untrusted_base_app asec_public_file:file execute;
-
 # Allow the allocation and use of ptys
 # Used by: https://play.google.com/store/apps/details?id=jackpal.androidterm
 create_pty(untrusted_base_app)
