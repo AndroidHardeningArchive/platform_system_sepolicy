@@ -7,6 +7,7 @@ init_daemon_domain(logd)
 # Read access to pseudo filesystems.
 r_dir_file(logd, proc)
 r_dir_file(logd, proc_net)
+r_dir_file(logd, proc_net_devroute)
 
 allow logd self:capability { setuid setgid sys_nice audit_control };
 allow logd self:capability2 syslog;
