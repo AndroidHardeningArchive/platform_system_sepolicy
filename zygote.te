@@ -69,6 +69,7 @@ allow zygote zygote_exec:file rx_file_perms;
 
 # Read access to pseudo filesystems.
 r_dir_file(zygote, proc_net)
+r_dir_file(zygote, proc_net_devroute)
 
 # Root fs.
 allow zygote rootfs:file r_file_perms;
