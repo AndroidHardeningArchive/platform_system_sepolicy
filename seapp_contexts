@@ -94,5 +94,6 @@ user=_app seinfo=base isAutoPlayApp=true domain=autoplay_app type=autoplay_data_
 user=_app isAutoPlayApp=true domain=autoplay_app type=autoplay_data_file levelFrom=all
 user=_app seinfo=base isPrivApp=true domain=priv_app type=app_data_file levelFrom=user
 user=_app isPrivApp=true domain=priv_app type=app_data_file levelFrom=user
+user=_app seinfo=netmonitor domain=netmonitor type=app_data_file levelFrom=user
 user=_app seinfo=base domain=untrusted_base_app type=app_data_file levelFrom=user
 user=_app domain=untrusted_app type=app_data_file levelFrom=user
