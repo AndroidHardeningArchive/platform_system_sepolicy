@@ -584,6 +584,7 @@ neverallow {
   -dumpstate
   -init
   -priv_app
+  -updater
   -recovery
   -sdcardd
   -system_server
