@@ -92,6 +92,7 @@ user=_isolated domain=isolated_app levelFrom=user
 user=_app seinfo=platform domain=platform_app type=app_data_file levelFrom=user
 user=_app seinfo=base isAutoPlayApp=true domain=autoplay_app type=autoplay_data_file levelFrom=all
 user=_app isAutoPlayApp=true domain=autoplay_app type=autoplay_data_file levelFrom=all
+user=_app seinfo=updater isPrivApp=true domain=updater type=app_data_file levelFrom=user
 user=_app seinfo=base isPrivApp=true domain=priv_app type=app_data_file levelFrom=user
 user=_app isPrivApp=true domain=priv_app type=app_data_file levelFrom=user
 user=_app seinfo=netmonitor domain=netmonitor type=app_data_file levelFrom=user
