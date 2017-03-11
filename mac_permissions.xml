@@ -73,4 +73,11 @@
       </package>
     </signer>
 
+    <!-- Release dev key in AOSP -->
+    <signer signature="@RELEASE" >
+      <package name="co.copperhead.updater">
+        <seinfo value="updater" />
+      </package>
+    </signer>
+
 </policy>
