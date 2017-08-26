@@ -22,7 +22,6 @@ coreAppdomain = {
         'platform_app',
         'priv_app',
         'radio',
-        'shared_relro',
         'shell',
         'system_app',
         'untrusted_app',
