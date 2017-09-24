@@ -21,6 +21,7 @@ coreAppdomain = {
         'nfc',
         'platform_app',
         'priv_app',
+        'updater',
         'radio',
         'shell',
         'system_app',
