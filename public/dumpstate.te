@@ -137,6 +137,7 @@ read_runtime_log_tags(dumpstate)
 
 # Read /proc/net
 allow dumpstate proc_net:file r_file_perms;
+allow dumpstate proc_net_devroute:file r_file_perms;
 
 # Read network state info files.
 allow dumpstate net_data_file:dir search;
