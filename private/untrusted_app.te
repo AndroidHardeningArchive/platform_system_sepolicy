@@ -27,3 +27,6 @@ bluetooth_domain(untrusted_app)
 # Allow the allocation and use of ptys
 # Used by: https://play.google.com/store/apps/details?id=jackpal.androidterm
 create_pty(untrusted_app)
+
+# Application-specific JIT compilers
+allow untrusted_app self:process execmem;
