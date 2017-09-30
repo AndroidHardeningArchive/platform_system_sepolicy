@@ -3,7 +3,7 @@
 ###
 
 # Only allow domains in AOSP to use the untrusted_app_all attribute.
-neverallow { untrusted_app_all -untrusted_app -untrusted_app_25 -netmonitor } domain:process fork;
+neverallow { untrusted_app_all -untrusted_app -untrusted_base_app -untrusted_app_25 -untrusted_base_app_25 -netmonitor } domain:process fork;
 
 define(`all_untrusted_apps',`{ untrusted_app_all untrusted_app_25 untrusted_app ephemeral_app isolated_app netmonitor }')
 # Receive or send uevent messages.
