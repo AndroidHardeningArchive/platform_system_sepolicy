@@ -46,6 +46,9 @@ allow isolated_app webview_zygote:unix_dgram_socket write;
 # Read system properties managed by webview_zygote.
 allow isolated_app webview_zygote_tmpfs:file read;
 
+# WebView and application-specific JIT compilers
+allow isolated_app self:process execmem;
+
 #####
 ##### Neverallow
 #####
