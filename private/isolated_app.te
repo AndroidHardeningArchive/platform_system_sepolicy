@@ -49,6 +49,8 @@ allow isolated_app webview_zygote_tmpfs:file read;
 # WebView and application-specific JIT compilers
 allow isolated_app self:process execmem;
 
+allow untrusted_app dalvikcache_data_file:file execute;
+
 #####
 ##### Neverallow
 #####
