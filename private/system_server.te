@@ -17,11 +17,7 @@ allow system_server zygote_tmpfs:file read;
 
 # For art.
 allow system_server dalvikcache_data_file:dir r_dir_perms;
-allow system_server dalvikcache_data_file:file { r_file_perms execute };
-userdebug_or_eng(`
-  # Report dalvikcache_data_file:file execute violations.
-  auditallow system_server dalvikcache_data_file:file execute;
-')
+allow system_server dalvikcache_data_file:file r_file_perms;
 
 # /data/resource-cache
 allow system_server resourcecache_data_file:file r_file_perms;
@@ -713,7 +709,6 @@ neverallow system_server dex2oat_exec:file no_x_file_perms;
 # in /data except for /data/dalvik-cache files.
 neverallow system_server {
   data_file_type
-  -dalvikcache_data_file #mapping with PROT_EXEC
 }:file no_x_file_perms;
 
 # The only block device system_server should be accessing is
