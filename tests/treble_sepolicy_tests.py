@@ -18,6 +18,7 @@ coreAppdomain = {
         'bluetooth',
         'ephemeral_app',
         'isolated_app',
+        'isolated_base_app',
         'nfc',
         'platform_app',
         'priv_app',

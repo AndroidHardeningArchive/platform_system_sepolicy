@@ -8,6 +8,7 @@ neverallow { untrusted_app_all -untrusted_app -untrusted_base_app -untrusted_app
 define(`all_untrusted_apps',`{
   ephemeral_app
   isolated_app
+  isolated_base_app
   untrusted_app
   untrusted_base_app
   untrusted_app_25
